@@ -35,6 +35,7 @@ Bu proje, kullanıcıların yapılacaklar listesi oluşturmasını sağlayan bas
 <hr>
 
 Bu uygulama, tarayıcının Local Storage özelliğini kullanarak kullanıcıların eklediği görevleri kaydeder. Sayfa yenilendiğinde veya tarayıcı kapatılıp yeniden açıldığında bile görevler korunur.<br>
+ 
  <h1> Ekran Görünümü </h1>
 
 ![](Todo.gif)
