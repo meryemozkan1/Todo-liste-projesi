@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="theme-color"
+      content="#f3f5ff"
+    />
     <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%236b63e8'/%3E%3Cpath d='M19 18h26a4 4 0 0 1 4 4v29H15V22a4 4 0 0 1 4-4Z' fill='white'/%3E%3Cpath d='m22 31 3 3 5-6m-8 13 3 3 5-6m5-7h7m-7 13h7' fill='none' stroke='%236b63e8' stroke-linecap='round' stroke-linejoin='round' stroke-width='3'/%3E%3C/svg%3E"
     />
     <link
       rel="stylesheet"
@@ -15,7 +20,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>İnput Eventlari</title>
+    <title>TaskMaster | Professional To-Do App</title>
   </head>
 
   <body>
@@ -23,45 +28,60 @@
       <div class="row">
         <div class="card w-100 mt-3">
           <div class="card-header">
-            <h5 class="card-title">Todo List Sayfası</h5>
+            <div class="app-heading">
+              <span class="app-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="m8 12 2.5 2.5L16.5 8.5M7 4.75h10A2.25 2.25 0 0 1 19.25 7v12A1.25 1.25 0 0 1 18 20.25H6A1.25 1.25 0 0 1 4.75 19V7A2.25 2.25 0 0 1 7 4.75Z" />
+                </svg>
+              </span>
+              <div>
+                <p class="eyebrow">GÜNÜNÜ PLANLA</p>
+                <h1 class="card-title">Todo Listesi</h1>
+              </div>
+            </div>
           </div>
           <div class="card-body">
             <form id="todoAddForm" class="mt-2">
+              <label class="sr-only" for="todoName">Yeni görev</label>
               <input
                 type="text"
                 class="form-control mt-2"
                 id="todoName"
                 aria-describedby="todo"
-                placeholder="Todo Giriniz"
+                placeholder="Bugün ne yapman gerekiyor?"
+                autocomplete="off"
               />
 
               <button
                 id="todoAddButton"
                 type="submit"
-                class="btn btn-primary mt-4 btn-sm"
+                class="btn btn-primary"
               >
-                Todo Ekleyin
+                <span aria-hidden="true">+</span>
+                Görev ekle
               </button>
             </form>
-
-            <hr />
           </div>
 
-          <hr />
-
           <div class="card-body">
-            <h5 class="card-title">Todo Listesi</h5>
+            <div class="list-heading">
+              <div>
+                <p class="eyebrow">YAPILACAKLAR</p>
+                <h2 class="card-title">Görevlerin</h2>
+              </div>
+            </div>
             <form name="form2" id="todoListForm">
+              <label class="sr-only" for="todoSearch">Görevlerde ara</label>
               <input
                 id="todoSearch"
                 type="text"
                 class="form-control mt-3"
-                placeholder="Todo Arayınız"
+                placeholder="Görevlerinde ara..."
+                autocomplete="off"
               />
-              <hr />
             </form>
 
-            <ul class="list-group">
+            <ul class="list-group" aria-label="Görev listesi">
               <!--
                         <li class="list-group-item d-flex justify-content-between">Todo 1
                             <a href="#" class="delete-item">
@@ -71,9 +91,9 @@
                     -->
             </ul>
 
-            <a href="#" id="clearButton" class="btn btn-primary btn-sm"
-              >Tüm Todoları Temizle</a
-            >
+            <button type="button" id="clearButton" class="btn btn-primary btn-sm">
+              Tüm görevleri temizle
+            </button>
           </div>
         </div>
       </div>
